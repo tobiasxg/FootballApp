@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+tools:context="com.example.tobias.footballapp.CreatePlayerActivity"
+android:orientation="vertical">
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@color/colorPrimary">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/create"
+        android:textSize="@dimen/text"
+        android:layout_marginBottom="@dimen/bottom"
+        android:layout_marginLeft="@dimen/side"
+        android:layout_marginRight="@dimen/side"
+        android:textStyle="bold"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/nameEdit"
+        android:hint="@string/name"
+        android:background="@color/formColor"
+        android:textSize="@dimen/text"
+        android:layout_marginBottom="@dimen/bottom"
+        android:layout_marginLeft="@dimen/side"
+        android:layout_marginRight="@dimen/side"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/heightEdit"
+        android:hint="@string/height"
+        android:background="@color/formColor"
+        android:textSize="@dimen/text"
+        android:layout_marginBottom="@dimen/bottom"
+        android:layout_marginLeft="@dimen/side"
+        android:layout_marginRight="@dimen/side"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/bornEdit"
+        android:hint="@string/date"
+        android:background="@color/formColor"
+        android:textSize="@dimen/text"
+        android:layout_marginBottom="@dimen/bottom"
+        android:layout_marginLeft="@dimen/side"
+        android:layout_marginRight="@dimen/side"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/positionEdit"
+        android:hint="@string/position"
+        android:background="@color/formColor"
+        android:textSize="@dimen/text"
+        android:layout_marginBottom="@dimen/bottom"
+        android:layout_marginLeft="@dimen/side"
+        android:layout_marginRight="@dimen/side"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/overallEdit"
+        android:hint="@string/overall"
+        android:background="@color/formColor"
+        android:textSize="@dimen/text"
+        android:layout_marginBottom="@dimen/bottom"
+        android:layout_marginLeft="@dimen/side"
+        android:layout_marginRight="@dimen/side"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/countryEdit"
+        android:hint="@string/country"
+        android:background="@color/formColor"
+        android:textSize="@dimen/text"
+        android:layout_marginBottom="@dimen/bottom"
+        android:layout_marginLeft="@dimen/side"
+        android:layout_marginRight="@dimen/side"/>
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/clubSpinnerPlayer"
+        android:background="@color/formColor"
+        android:textSize="@dimen/text"
+        android:layout_marginBottom="@dimen/bottom"
+        android:layout_marginLeft="@dimen/side"
+        android:layout_marginRight="@dimen/side"></Spinner>
+</LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Set test temp"
+            android:onClick="setTest"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="set database"
+            android:onClick="setDatabase"/>
+    </LinearLayout>
+
+<android.support.design.widget.FloatingActionButton
+    android:id="@+id/fab"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_margin="16dp"
+    android:clickable="true"
+    android:src="@drawable/plus"
+    android:tint="#000000"
+    app:backgroundTint="#ee4321"
+    android:onClick="savePlayer"/>
+
+</LinearLayout>
