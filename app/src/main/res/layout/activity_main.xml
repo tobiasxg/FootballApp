@@ -76,12 +76,29 @@
         android:onClick="setDatabaseAfterClear"/>
 </LinearLayout>
 
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="random"
         android:onClick="createRandomPlayer"/>
 
+    <Button
+        android:id="@+id/rndNameTmp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Random name tmp"
+        android:onClick="filterTopanNames"/>
+    <Button
+        android:id="@+id/saveNameTmp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:onClick="saveTopanNames"/>
+    </LinearLayout>
 
     <Button
         android:id="@+id/sharedButton"

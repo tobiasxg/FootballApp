@@ -195,7 +195,46 @@
             android:layout_marginRight="@dimen/side2"
             android:onClick="toAllTeamPlayers"/>
 
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/changeEdit"
+            android:background="@color/formColor"
+            android:textSize="8dp"
+            android:layout_marginBottom="@dimen/bottom"
+            android:layout_marginLeft="@dimen/side2"
+            android:layout_marginRight="@dimen/side2"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/changeButton1"
+            android:text="set"
+            android:background="@color/colorAccent"
+            android:textSize="@dimen/text"
+            android:layout_marginBottom="@dimen/bottom"
+            android:layout_marginLeft="@dimen/side2"
+            android:onClick="setPlayer"/>
+
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/changeButton2"
+            android:text="save"
+            android:background="@color/colorAccent"
+            android:textSize="@dimen/text"
+            android:layout_marginBottom="@dimen/bottom"
+            android:layout_marginRight="@dimen/side2"
+            android:onClick="changePlayer"/>
+        </LinearLayout>
+
     </LinearLayout>
+
+
 
 
 </LinearLayout>

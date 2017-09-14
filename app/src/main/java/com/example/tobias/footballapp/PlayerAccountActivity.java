@@ -172,6 +172,34 @@ public class PlayerAccountActivity extends AppCompatActivity {
         crTag.setText("Formation");
     }
 
+    public void setPlayer(View view){
+        EditText changeET = (EditText) findViewById(R.id.changeEdit);
+        changeET.setText(name.getText().toString()+"?"+height.getText().toString()+"?"+
+                born.getText().toString().split("\\(")[1].split("\\)")[0]+"?"+position.getText().toString()+"?"+
+                overall.getText().toString()+"?"+country.getText().toString()+"?"+
+                team.getText().toString());
+    }
+
+    public void changePlayer(View view){
+        EditText changeET = (EditText) findViewById(R.id.changeEdit);
+        String prev = name.getText().toString()+"?"+height.getText().toString()+"?"+
+                born.getText().toString().split("\\(")[1].split("\\)")[0]+"?"+position.getText().toString()+"?"+
+                overall.getText().toString()+"?"+country.getText().toString()+"?"+
+                team.getText().toString();
+
+        SharedPreferences prefs = this.getSharedPreferences("settings",this.MODE_PRIVATE);
+//        String savedplayer = prefs.getString("players", "");
+        String vip = prefs.getString("playersVIP", "");
+//        String[] savedplayers = savedplayer.split("\\*");
+        SharedPreferences.Editor editor = prefs.edit();
+        vip = vip.replace(prev, changeET.getText().toString());
+        editor.putString("playersVIP", vip);
+        editor.commit();
+
+        changeET.setText("");
+
+    }
+
     public void saveAsVIP(View view){
         SharedPreferences prefs = this.getSharedPreferences("settings",this.MODE_PRIVATE);
         String savedplayer = prefs.getString("players", "");

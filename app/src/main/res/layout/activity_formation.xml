@@ -1,0 +1,1284 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.tobias.footballapp.FormationActivity">
+
+    <Button
+        android:id="@+id/buttonFormation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="random formation"
+        android:onClick="randomFormation"/>
+
+    <ImageView
+        android:id="@+id/shirt01"
+        android:foregroundGravity="center"
+        android:layout_width="@dimen/formation"
+        android:layout_height="@dimen/formation"
+        android:layout_marginTop="@dimen/gkShirt"
+        android:src="@drawable/club_lux_away"
+        android:layout_alignParentTop="true"
+        android:visibility="visible"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:id="@+id/text01"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/gkText"
+        android:gravity="center"
+        android:text="player name"
+        android:visibility="visible"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/shirtDef51"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/formation"
+            android:layout_marginTop="@dimen/defShirt"
+            android:layout_weight="0.5"
+            android:src="@drawable/club_lux_away"
+            android:layout_alignParentTop="true"
+		    android:visibility="invisible"/>
+
+        <ImageView
+            android:id="@+id/shirtDef52"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/formation"
+            android:layout_marginTop="@dimen/defShirt"
+            android:layout_weight="0.5"
+            android:src="@drawable/club_lux_away"
+            android:layout_alignParentTop="true"
+		    android:visibility="invisible"/>
+
+        <ImageView
+            android:id="@+id/shirtDef53"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/formation"
+            android:layout_marginTop="@dimen/defShirt"
+            android:layout_weight="0.5"
+            android:src="@drawable/club_lux_away"
+            android:layout_alignParentTop="true"
+		    android:visibility="invisible"/>
+
+        <ImageView
+            android:id="@+id/shirtDef54"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/formation"
+            android:layout_marginTop="@dimen/defShirt"
+            android:layout_weight="0.5"
+            android:src="@drawable/club_lux_away"
+            android:layout_alignParentTop="true"
+		    android:visibility="invisible"/>
+
+
+        <ImageView
+            android:id="@+id/shirtDef55"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/formation"
+            android:layout_marginTop="@dimen/defShirt"
+            android:layout_weight="0.5"
+            android:src="@drawable/club_lux_away"
+            android:layout_alignParentTop="true"
+		    android:visibility="invisible"/>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/textDef51"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/defText"
+            android:layout_weight="0.5"
+            android:layout_alignParentTop="true"
+		    android:visibility="invisible"
+            android:gravity="center"
+            android:text="player name"/>
+
+        <TextView
+            android:id="@+id/textDef52"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/defText"
+            android:layout_weight="0.5"
+            android:layout_alignParentTop="true"
+		    android:visibility="invisible"
+            android:gravity="center"
+            android:text="player name"/>
+
+        <TextView
+            android:id="@+id/textDef53"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/defText"
+            android:layout_weight="0.5"
+            android:layout_alignParentTop="true"
+		    android:visibility="invisible"
+            android:gravity="center"
+            android:text="player name"/>
+
+        <TextView
+            android:id="@+id/textDef54"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/defText"
+            android:layout_weight="0.5"
+            android:layout_alignParentTop="true"
+		    android:visibility="invisible"
+            android:gravity="center"
+            android:text="player name"/>
+
+        <TextView
+            android:id="@+id/textDef55"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/defText"
+            android:layout_weight="0.5"
+            android:layout_alignParentTop="true"
+		    android:visibility="invisible"
+            android:gravity="center"
+            android:text="player name"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/shirtMid151"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/formation"
+            android:layout_marginTop="@dimen/midShirt1"
+            android:layout_weight="0.5"
+            android:src="@drawable/club_lux_away"
+            android:layout_alignParentTop="true"
+		    android:visibility="invisible"/>
+
+        <ImageView
+            android:id="@+id/shirtMid152"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/formation"
+            android:layout_marginTop="@dimen/midShirt1"
+            android:layout_weight="0.5"
+            android:src="@drawable/club_lux_away"
+            android:layout_alignParentTop="true"
+		    android:visibility="invisible"/>
+
+        <ImageView
+            android:id="@+id/shirtMid153"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/formation"
+            android:layout_marginTop="@dimen/midShirt1"
+            android:layout_weight="0.5"
+            android:src="@drawable/club_lux_away"
+            android:layout_alignParentTop="true"
+		    android:visibility="invisible"/>
+
+        <ImageView
+            android:id="@+id/shirtMid154"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/formation"
+            android:layout_marginTop="@dimen/midShirt1"
+            android:layout_weight="0.5"
+            android:src="@drawable/club_lux_away"
+            android:layout_alignParentTop="true"
+		    android:visibility="invisible"/>
+
+        <ImageView
+            android:id="@+id/shirtMid155"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/formation"
+            android:layout_marginTop="@dimen/midShirt1"
+            android:layout_weight="0.5"
+            android:src="@drawable/club_lux_away"
+            android:layout_alignParentTop="true"
+		    android:visibility="invisible"/>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/textMid151"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/midText1"
+            android:layout_weight="0.5"
+            android:layout_alignParentTop="true"
+		    android:visibility="invisible"
+            android:gravity="center"
+            android:text="player name"/>
+
+        <TextView
+            android:id="@+id/textMid152"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/midText1"
+            android:layout_weight="0.5"
+            android:layout_alignParentTop="true"
+		    android:visibility="invisible"
+            android:gravity="center"
+            android:text="player name"/>
+
+        <TextView
+            android:id="@+id/textMid153"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/midText1"
+            android:layout_weight="0.5"
+            android:layout_alignParentTop="true"
+		    android:visibility="invisible"
+            android:gravity="center"
+            android:text="player name"/>
+
+        <TextView
+            android:id="@+id/textMid154"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/midText1"
+            android:layout_weight="0.5"
+            android:layout_alignParentTop="true"
+		    android:visibility="invisible"
+            android:gravity="center"
+            android:text="player name"/>
+
+        <TextView
+            android:id="@+id/textMid155"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/midText1"
+            android:layout_weight="0.5"
+            android:layout_alignParentTop="true"
+		    android:visibility="invisible"
+            android:gravity="center"
+            android:text="player name"/>
+    </LinearLayout>
+
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/shirtMid251"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/formation"
+            android:layout_marginTop="@dimen/midShirt2"
+            android:layout_weight="0.5"
+            android:src="@drawable/club_lux_away"
+            android:layout_alignParentTop="true"
+		    android:visibility="invisible"/>
+
+        <ImageView
+            android:id="@+id/shirtMid252"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/formation"
+            android:layout_marginTop="@dimen/midShirt2"
+            android:layout_weight="0.5"
+            android:src="@drawable/club_lux_away"
+            android:layout_alignParentTop="true"
+		    android:visibility="invisible"/>
+
+        <ImageView
+            android:id="@+id/shirtMid253"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/formation"
+            android:layout_marginTop="@dimen/midShirt2"
+            android:layout_weight="0.5"
+            android:src="@drawable/club_lux_away"
+            android:layout_alignParentTop="true"
+		    android:visibility="visible"/>
+
+        <ImageView
+            android:id="@+id/shirtMid254"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/formation"
+            android:layout_marginTop="@dimen/midShirt2"
+            android:layout_weight="0.5"
+            android:src="@drawable/club_lux_away"
+            android:layout_alignParentTop="true"
+		    android:visibility="invisible"/>
+
+        <ImageView
+            android:id="@+id/shirtMid255"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/formation"
+            android:layout_marginTop="@dimen/midShirt2"
+            android:layout_weight="0.5"
+            android:src="@drawable/club_lux_away"
+            android:layout_alignParentTop="true"
+		    android:visibility="invisible"/>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/textMid251"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/midText2"
+            android:layout_weight="0.5"
+            android:layout_alignParentTop="true"
+		    android:visibility="invisible"
+            android:gravity="center"
+            android:text="player name"/>
+
+        <TextView
+            android:id="@+id/textMid252"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/midText2"
+            android:layout_weight="0.5"
+            android:layout_alignParentTop="true"
+		    android:visibility="invisible"
+            android:gravity="center"
+            android:text="player name"/>
+
+        <TextView
+            android:id="@+id/textMid253"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/midText2"
+            android:layout_weight="0.5"
+            android:layout_alignParentTop="true"
+		    android:visibility="visible"
+            android:gravity="center"
+            android:text="player name"/>
+
+        <TextView
+            android:id="@+id/textMid254"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/midText2"
+            android:layout_weight="0.5"
+            android:layout_alignParentTop="true"
+		    android:visibility="invisible"
+            android:gravity="center"
+            android:text="player name"/>
+
+        <TextView
+            android:id="@+id/textMid255"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/midText2"
+            android:layout_weight="0.5"
+            android:layout_alignParentTop="true"
+		    android:visibility="invisible"
+            android:gravity="center"
+            android:text="player name"/>
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/shirtAtk41"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/formation"
+            android:layout_marginTop="@dimen/atkShirt"
+            android:layout_weight="0.5"
+            android:src="@drawable/club_lux_away"
+            android:layout_alignParentTop="true"
+		    android:visibility="invisible"/>
+
+        <ImageView
+            android:id="@+id/shirtAtk42"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/formation"
+            android:layout_marginTop="@dimen/atkShirt"
+            android:layout_weight="0.5"
+            android:src="@drawable/club_lux_away"
+            android:layout_alignParentTop="true"
+		    android:visibility="invisible"/>
+
+        <ImageView
+            android:id="@+id/shirtAtk43"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/formation"
+            android:layout_marginTop="@dimen/atkShirt"
+            android:layout_weight="0.5"
+            android:src="@drawable/club_lux_away"
+            android:layout_alignParentTop="true"
+		    android:visibility="invisible"/>
+
+        <ImageView
+            android:id="@+id/shirtAtk44"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/formation"
+            android:layout_marginTop="@dimen/atkShirt"
+            android:layout_weight="0.5"
+            android:src="@drawable/club_lux_away"
+            android:layout_alignParentTop="true"
+		    android:visibility="invisible"/>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/textAtk41"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/atkText"
+            android:layout_weight="0.5"
+            android:layout_alignParentTop="true"
+		    android:visibility="invisible"
+            android:gravity="center"
+            android:text="player name"/>
+
+        <TextView
+            android:id="@+id/textAtk42"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/atkText"
+            android:layout_weight="0.5"
+            android:layout_alignParentTop="true"
+		    android:visibility="invisible"
+            android:gravity="center"
+            android:text="player name"/>
+
+        <TextView
+            android:id="@+id/textAtk43"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/atkText"
+            android:layout_weight="0.5"
+            android:layout_alignParentTop="true"
+		    android:visibility="invisible"
+            android:gravity="center"
+            android:text="player name"/>
+
+        <TextView
+            android:id="@+id/textAtk44"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/atkText"
+            android:layout_weight="0.5"
+            android:layout_alignParentTop="true"
+		    android:visibility="invisible"
+            android:gravity="center"
+            android:text="player name"/>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/shirtDef41"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/formation"
+            android:layout_marginTop="@dimen/defShirt"
+            android:layout_weight="0.5"
+            android:src="@drawable/club_lux_away"
+            android:layout_alignParentTop="true"
+            android:visibility="visible"/>
+
+        <ImageView
+            android:id="@+id/shirtDef42"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/formation"
+            android:layout_marginTop="@dimen/defShirt"
+            android:layout_weight="0.5"
+            android:src="@drawable/club_lux_away"
+            android:layout_alignParentTop="true"
+            android:visibility="visible"/>
+
+        <ImageView
+            android:id="@+id/shirtDef43"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/formation"
+            android:layout_marginTop="@dimen/defShirt"
+            android:layout_weight="0.5"
+            android:src="@drawable/club_lux_away"
+            android:layout_alignParentTop="true"
+            android:visibility="visible"/>
+
+        <ImageView
+            android:id="@+id/shirtDef44"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/formation"
+            android:layout_marginTop="@dimen/defShirt"
+            android:layout_weight="0.5"
+            android:src="@drawable/club_lux_away"
+            android:layout_alignParentTop="true"
+            android:visibility="visible"/>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/textDef41"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/defText"
+            android:layout_weight="0.5"
+            android:layout_alignParentTop="true"
+            android:visibility="visible"
+            android:gravity="center"
+            android:text="player name"/>
+
+        <TextView
+            android:id="@+id/textDef42"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/defText"
+            android:layout_weight="0.5"
+            android:layout_alignParentTop="true"
+            android:visibility="visible"
+            android:gravity="center"
+            android:text="player name"/>
+
+        <TextView
+            android:id="@+id/textDef43"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/defText"
+            android:layout_weight="0.5"
+            android:layout_alignParentTop="true"
+            android:visibility="visible"
+            android:gravity="center"
+            android:text="player name"/>
+
+        <TextView
+            android:id="@+id/textDef44"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/defText"
+            android:layout_weight="0.5"
+            android:layout_alignParentTop="true"
+            android:visibility="visible"
+            android:gravity="center"
+            android:text="player name"/>
+    </LinearLayout>
+
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/shirtMid141"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/formation"
+            android:layout_marginTop="@dimen/midShirt1"
+            android:layout_weight="0.5"
+            android:src="@drawable/club_lux_away"
+            android:layout_alignParentTop="true"
+            android:visibility="invisible"/>
+
+        <ImageView
+            android:id="@+id/shirtMid142"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/formation"
+            android:layout_marginTop="@dimen/midShirt1"
+            android:layout_weight="0.5"
+            android:src="@drawable/club_lux_away"
+            android:layout_alignParentTop="true"
+            android:visibility="invisible"/>
+
+        <ImageView
+            android:id="@+id/shirtMid143"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/formation"
+            android:layout_marginTop="@dimen/midShirt1"
+            android:layout_weight="0.5"
+            android:src="@drawable/club_lux_away"
+            android:layout_alignParentTop="true"
+            android:visibility="invisible"/>
+
+        <ImageView
+            android:id="@+id/shirtMid144"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/formation"
+            android:layout_marginTop="@dimen/midShirt1"
+            android:layout_weight="0.5"
+            android:src="@drawable/club_lux_away"
+            android:layout_alignParentTop="true"
+            android:visibility="invisible"/>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/textMid141"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/midText1"
+            android:layout_weight="0.5"
+            android:layout_alignParentTop="true"
+            android:visibility="invisible"
+            android:gravity="center"
+            android:text="player name"/>
+
+        <TextView
+            android:id="@+id/textMid142"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/midText1"
+            android:layout_weight="0.5"
+            android:layout_alignParentTop="true"
+            android:visibility="invisible"
+            android:gravity="center"
+            android:text="player name"/>
+
+        <TextView
+            android:id="@+id/textMid143"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/midText1"
+            android:layout_weight="0.5"
+            android:layout_alignParentTop="true"
+            android:visibility="invisible"
+            android:gravity="center"
+            android:text="player name"/>
+
+        <TextView
+            android:id="@+id/textMid144"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/midText1"
+            android:layout_weight="0.5"
+            android:layout_alignParentTop="true"
+            android:visibility="invisible"
+            android:gravity="center"
+            android:text="player name"/>
+    </LinearLayout>
+
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/shirtMid241"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/formation"
+            android:layout_marginTop="@dimen/midShirt2"
+            android:layout_weight="0.5"
+            android:src="@drawable/club_lux_away"
+            android:layout_alignParentTop="true"
+            android:visibility="invisible"/>
+
+        <ImageView
+            android:id="@+id/shirtMid242"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/formation"
+            android:layout_marginTop="@dimen/midShirt2"
+            android:layout_weight="0.5"
+            android:src="@drawable/club_lux_away"
+            android:layout_alignParentTop="true"
+            android:visibility="invisible"/>
+
+        <ImageView
+            android:id="@+id/shirtMid243"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/formation"
+            android:layout_marginTop="@dimen/midShirt2"
+            android:layout_weight="0.5"
+            android:src="@drawable/club_lux_away"
+            android:layout_alignParentTop="true"
+            android:visibility="invisible"/>
+
+        <ImageView
+            android:id="@+id/shirtMid244"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/formation"
+            android:layout_marginTop="@dimen/midShirt2"
+            android:layout_weight="0.5"
+            android:src="@drawable/club_lux_away"
+            android:layout_alignParentTop="true"
+            android:visibility="invisible"/>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/textMid241"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/midText2"
+            android:layout_weight="0.5"
+            android:layout_alignParentTop="true"
+            android:visibility="invisible"
+            android:gravity="center"
+            android:text="player name"/>
+
+        <TextView
+            android:id="@+id/textMid242"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/midText2"
+            android:layout_weight="0.5"
+            android:layout_alignParentTop="true"
+            android:visibility="invisible"
+            android:gravity="center"
+            android:text="player name"/>
+
+        <TextView
+            android:id="@+id/textMid243"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/midText2"
+            android:layout_weight="0.5"
+            android:layout_alignParentTop="true"
+            android:visibility="invisible"
+            android:gravity="center"
+            android:text="player name"/>
+
+        <TextView
+            android:id="@+id/textMid244"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/midText2"
+            android:layout_weight="0.5"
+            android:layout_alignParentTop="true"
+            android:visibility="invisible"
+            android:gravity="center"
+            android:text="player name"/>
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/shirtAtk31"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/formation"
+            android:layout_marginTop="@dimen/atkShirt"
+            android:layout_weight="0.5"
+            android:src="@drawable/club_lux_away"
+            android:layout_alignParentTop="true"
+            android:visibility="visible"/>
+
+        <ImageView
+            android:id="@+id/shirtAtk32"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/formation"
+            android:layout_marginTop="@dimen/atkShirt"
+            android:layout_weight="0.5"
+            android:src="@drawable/club_lux_away"
+            android:layout_alignParentTop="true"
+            android:visibility="visible"/>
+
+        <ImageView
+            android:id="@+id/shirtAtk33"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/formation"
+            android:layout_marginTop="@dimen/atkShirt"
+            android:layout_weight="0.5"
+            android:src="@drawable/club_lux_away"
+            android:layout_alignParentTop="true"
+            android:visibility="visible"/>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/textAtk31"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/atkText"
+            android:layout_weight="0.5"
+            android:layout_alignParentTop="true"
+            android:visibility="visible"
+            android:gravity="center"
+            android:text="player name"/>
+
+        <TextView
+            android:id="@+id/textAtk32"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/atkText"
+            android:layout_weight="0.5"
+            android:layout_alignParentTop="true"
+            android:visibility="visible"
+            android:gravity="center"
+            android:text="player name"/>
+
+        <TextView
+            android:id="@+id/textAtk33"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/atkText"
+            android:layout_weight="0.5"
+            android:layout_alignParentTop="true"
+            android:visibility="visible"
+            android:gravity="center"
+            android:text="player name"/>
+    </LinearLayout>
+
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/shirtDef31"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/formation"
+            android:layout_marginTop="@dimen/defShirt"
+            android:layout_weight="0.5"
+            android:src="@drawable/club_lux_away"
+            android:layout_alignParentTop="true"
+            android:visibility="invisible"/>
+
+        <ImageView
+            android:id="@+id/shirtDef32"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/formation"
+            android:layout_marginTop="@dimen/defShirt"
+            android:layout_weight="0.5"
+            android:src="@drawable/club_lux_away"
+            android:layout_alignParentTop="true"
+            android:visibility="invisible"/>
+
+        <ImageView
+            android:id="@+id/shirtDef33"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/formation"
+            android:layout_marginTop="@dimen/defShirt"
+            android:layout_weight="0.5"
+            android:src="@drawable/club_lux_away"
+            android:layout_alignParentTop="true"
+            android:visibility="invisible"/>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/textDef31"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/defText"
+            android:layout_weight="0.5"
+            android:layout_alignParentTop="true"
+            android:visibility="invisible"
+            android:gravity="center"
+            android:text="player name"/>
+
+        <TextView
+            android:id="@+id/textDef32"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/defText"
+            android:layout_weight="0.5"
+            android:layout_alignParentTop="true"
+            android:visibility="invisible"
+            android:gravity="center"
+            android:text="player name"/>
+
+        <TextView
+            android:id="@+id/textDef33"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/defText"
+            android:layout_weight="0.5"
+            android:layout_alignParentTop="true"
+            android:visibility="invisible"
+            android:gravity="center"
+            android:text="player name"/>
+    </LinearLayout>
+
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/shirtMid131"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/formation"
+            android:layout_marginTop="@dimen/midShirt1"
+            android:layout_weight="0.5"
+            android:src="@drawable/club_lux_away"
+            android:layout_alignParentTop="true"
+            android:visibility="visible"/>
+
+        <ImageView
+            android:id="@+id/shirtMid132"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/formation"
+            android:layout_marginTop="@dimen/midShirt1"
+            android:layout_weight="0.5"
+            android:src="@drawable/club_lux_away"
+            android:layout_alignParentTop="true"
+            android:visibility="visible"/>
+
+        <ImageView
+            android:id="@+id/shirtMid133"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/formation"
+            android:layout_marginTop="@dimen/midShirt1"
+            android:layout_weight="0.5"
+            android:src="@drawable/club_lux_away"
+            android:layout_alignParentTop="true"
+            android:visibility="visible"/>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/textMid131"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/midText1"
+            android:layout_weight="0.5"
+            android:layout_alignParentTop="true"
+            android:visibility="visible"
+            android:gravity="center"
+            android:text="player name"/>
+
+        <TextView
+            android:id="@+id/textMid132"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/midText1"
+            android:layout_weight="0.5"
+            android:layout_alignParentTop="true"
+            android:visibility="visible"
+            android:gravity="center"
+            android:text="player name"/>
+
+        <TextView
+            android:id="@+id/textMid133"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/midText1"
+            android:layout_weight="0.5"
+            android:layout_alignParentTop="true"
+            android:visibility="visible"
+            android:gravity="center"
+            android:text="player name"/>
+    </LinearLayout>
+
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/shirtMid231"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/formation"
+            android:layout_marginTop="@dimen/midShirt2"
+            android:layout_weight="0.5"
+            android:src="@drawable/club_lux_away"
+            android:layout_alignParentTop="true"
+            android:visibility="invisible"/>
+
+        <ImageView
+            android:id="@+id/shirtMid232"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/formation"
+            android:layout_marginTop="@dimen/midShirt2"
+            android:layout_weight="0.5"
+            android:src="@drawable/club_lux_away"
+            android:layout_alignParentTop="true"
+            android:visibility="invisible"/>
+
+        <ImageView
+            android:id="@+id/shirtMid233"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/formation"
+            android:layout_marginTop="@dimen/midShirt2"
+            android:layout_weight="0.5"
+            android:src="@drawable/club_lux_away"
+            android:layout_alignParentTop="true"
+            android:visibility="invisible"/>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/textMid231"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/midText2"
+            android:layout_weight="0.5"
+            android:layout_alignParentTop="true"
+            android:visibility="invisible"
+            android:gravity="center"
+            android:text="player name"/>
+
+        <TextView
+            android:id="@+id/textMid232"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/midText2"
+            android:layout_weight="0.5"
+            android:layout_alignParentTop="true"
+            android:visibility="invisible"
+            android:gravity="center"
+            android:text="player name"/>
+
+        <TextView
+            android:id="@+id/textMid233"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/midText2"
+            android:layout_weight="0.5"
+            android:layout_alignParentTop="true"
+            android:visibility="invisible"
+            android:gravity="center"
+            android:text="player name"/>
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/shirtAtk21"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/formation"
+            android:layout_marginTop="@dimen/atkShirt"
+            android:layout_weight="0.5"
+            android:src="@drawable/club_lux_away"
+            android:layout_alignParentTop="true"
+            android:visibility="invisible"/>
+
+        <ImageView
+            android:id="@+id/shirtAtk22"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/formation"
+            android:layout_marginTop="@dimen/atkShirt"
+            android:layout_weight="0.5"
+            android:src="@drawable/club_lux_away"
+            android:layout_alignParentTop="true"
+            android:visibility="invisible"/>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/textAtk21"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/atkText"
+            android:layout_weight="0.5"
+            android:layout_alignParentTop="true"
+            android:visibility="invisible"
+            android:gravity="center"
+            android:text="player name"/>
+
+        <TextView
+            android:id="@+id/textAtk22"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/atkText"
+            android:layout_weight="0.5"
+            android:layout_alignParentTop="true"
+            android:visibility="invisible"
+            android:gravity="center"
+            android:text="player name"/>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/shirtMid121"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/formation"
+            android:layout_marginTop="@dimen/midShirt1"
+            android:layout_weight="0.5"
+            android:src="@drawable/club_lux_away"
+            android:layout_alignParentTop="true"
+            android:visibility="invisible"/>
+
+        <ImageView
+            android:id="@+id/shirtMid122"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/formation"
+            android:layout_marginTop="@dimen/midShirt1"
+            android:layout_weight="0.5"
+            android:src="@drawable/club_lux_away"
+            android:layout_alignParentTop="true"
+            android:visibility="invisible"/>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/textMid121"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/midText1"
+            android:layout_weight="0.5"
+            android:layout_alignParentTop="true"
+            android:visibility="invisible"
+            android:gravity="center"
+            android:text="player name"/>
+
+        <TextView
+            android:id="@+id/textMid122"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/midText1"
+            android:layout_weight="0.5"
+            android:layout_alignParentTop="true"
+            android:visibility="invisible"
+            android:gravity="center"
+            android:text="player name"/>
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/shirtMid221"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/formation"
+            android:layout_marginTop="@dimen/midShirt2"
+            android:layout_weight="0.5"
+            android:src="@drawable/club_lux_away"
+            android:layout_alignParentTop="true"
+            android:visibility="invisible"/>
+
+        <ImageView
+            android:id="@+id/shirtMid222"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/formation"
+            android:layout_marginTop="@dimen/midShirt2"
+            android:layout_weight="0.5"
+            android:src="@drawable/club_lux_away"
+            android:layout_alignParentTop="true"
+            android:visibility="invisible"/>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/textMid221"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/midText2"
+            android:layout_weight="0.5"
+            android:layout_alignParentTop="true"
+            android:visibility="invisible"
+            android:gravity="center"
+            android:text="player name"/>
+
+        <TextView
+            android:id="@+id/textMid222"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/midText2"
+            android:layout_weight="0.5"
+            android:layout_alignParentTop="true"
+            android:visibility="invisible"
+            android:gravity="center"
+            android:text="player name"/>
+    </LinearLayout>
+
+
+
+
+
+
+</RelativeLayout>

@@ -12,6 +12,8 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import org.w3c.dom.Text;
+
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -53,9 +55,14 @@ public class ListActivity extends AppCompatActivity {
         countryFilter = extras.getString("countryFilter");
         enabledPos = extras.getString("enabledPos");
 
+
         SharedPreferences prefs = this.getSharedPreferences("settings",this.MODE_PRIVATE);
         String savedPlayer = prefs.getString(listName, "");
         String[] savedPlayers = savedPlayer.split("\\*");
+
+
+        String teamString = prefs.getString("teams", "");
+        setSortedTextView(currentTeam, teamString);
 
         savedPlayers = filterPlayers(savedPlayers, currentTeam);
         savedPlayers = filterPlayers(savedPlayers, countryFilter);
@@ -280,6 +287,20 @@ public class ListActivity extends AppCompatActivity {
             }
         }
         return players;
+    }
+
+    public void setSortedTextView(String currentTeam, String teamString){
+        TextView sortedSentence = (TextView) findViewById(R.id.sortedView);
+
+//        String formation = "";
+        String[] teams = teamString.split("\\*");
+        for(int i = 0;i<teams.length;i++){
+            if(teams[i].contains(currentTeam)){
+                String formation = teams[i].split("\\?")[6];
+                sortedSentence.setText(formation);
+                break;
+            }
+        }
     }
 }
 

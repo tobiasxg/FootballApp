@@ -15,6 +15,12 @@
         android:textStyle="bold"
         android:text="All Honours Liga Players" />
 
+    <TextView
+        android:id="@+id/sortedView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="15dp"/>
+
     <ListView
         android:id="@+id/listViewCustom"
         android:layout_width="fill_parent"

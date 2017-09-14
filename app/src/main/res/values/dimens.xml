@@ -6,4 +6,16 @@
     <dimen name="side2">40dp</dimen>
     <dimen name="side3">30dp</dimen>
     <dimen name="fab_margin">16dp</dimen>
+    <dimen name="formation">50dp</dimen>
+
+    <dimen name="gkShirt">50dp</dimen>
+    <dimen name="gkText">100dp</dimen>
+    <dimen name="defShirt">140dp</dimen>
+    <dimen name="defText">190dp</dimen>
+    <dimen name="midShirt1">230dp</dimen>
+    <dimen name="midText1">280dp</dimen>
+    <dimen name="midShirt2">320dp</dimen>
+    <dimen name="midText2">370dp</dimen>
+    <dimen name="atkShirt">410dp</dimen>
+    <dimen name="atkText">460dp</dimen>
 </resources>

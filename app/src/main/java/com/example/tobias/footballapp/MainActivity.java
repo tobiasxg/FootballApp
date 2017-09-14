@@ -1,5 +1,6 @@
 package com.example.tobias.footballapp;
 
+import android.content.ClipboardManager;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.annotation.IntegerRes;
@@ -93,6 +94,7 @@ public class MainActivity extends AppCompatActivity {
         }
         TextView tempText = (TextView) findViewById(R.id.tempText);
         tempText.setText(ratingTeams);
+//        tempText.setText(allTeams);
 
 
         Random rand = new Random();
@@ -490,7 +492,7 @@ public class MainActivity extends AppCompatActivity {
             if (formationArray[3].equals("1")) {
                 pos4 = "ST";
             } else if (formationArray[3].equals("2")) {
-                pos4 = "LW RW";
+                pos4 = "ST ST";
             } else if (formationArray[3].equals("3")) {
                 pos4 = "LW ST RW";
             }
@@ -591,15 +593,17 @@ public class MainActivity extends AppCompatActivity {
                 countries = getString(R.string.hungaryCountries);
                 break;
             default:
-                names = getString(R.string.names);
-                surnames = getString(R.string.surnames);
+//                names = getString(R.string.names);
+//                surnames = getString(R.string.surnames);
+                names = getString(R.string.namesTopan);
+                surnames = getString(R.string.surnamesTopan);
                 countries = getString(R.string.countries);
                 break;
         }
 
         String[] namesArray = names.split(" ");
         String[] surnamesArray = surnames.split(" ");
-        String [] countriesArray = countries.split(" ");
+        String[] countriesArray = countries.split(" ");
 
         Random rand = new Random();
 
@@ -638,7 +642,7 @@ public class MainActivity extends AppCompatActivity {
         editor.putString("playersVIP",dbPlayers);
 
         String dbTeams =
-                "Xav Atlantic?Atlantica?1910?70?Toby Garriz?Navy Red?4-2-1-3*?84" +
+                "Xav Atlantic?Atlantica?1910?70?Toby Garriz?Navy Red?4-2-1-3?84*" +
                         "FC Havtar?Havtar?1910?90?Peter van der Haven?Blue Navy?4-1-4-1?85*" +
                         "FC Wulfbosch?Wulfbosch?1910?80?Nik Howls?Green?4-2-3-1?85*" +
                         "Achilles?Topato?1910?80?Giorgi Hile?White Black?4-3-3?83*" +
@@ -714,6 +718,23 @@ public class MainActivity extends AppCompatActivity {
 
         String[] filteredPlayersA = lineUpA.split("\\*");
         String[] filteredPlayersB = lineUpB.split("\\*");
+
+
+        TextView tempText = (TextView) findViewById(R.id.tempText);
+        String temp = "";
+//        temp = temp+"   "+filteredPlayersA[0].split("\\?")[0];
+//        temp = temp+"   "+filteredPlayersA[1].split("\\?")[0];
+        for(int t = 0;t<filteredPlayersA.length;t++){
+            if(filteredPlayersA[t].split("\\?")[3].equals("GK")){
+                temp = temp+"\n";
+            }
+            temp = temp+filteredPlayersA[t].split("\\?")[0]+" ";
+        }
+//        temp = temp+"";
+        tempText.setText(temp);
+        tempText.setTextSize(8);
+
+
         MatchClass match = new MatchClass(filteredPlayersA, filteredPlayersB, formationA, formationB);
         match.midfield();
         match.midfield();
@@ -756,6 +777,57 @@ public class MainActivity extends AppCompatActivity {
         return lineup;
     }
 
+
+    public void filterTopanNames(View view){
+        String[] topaneseNames = getString(R.string.surnames).split(" ");
+        SharedPreferences prefs = this.getSharedPreferences("settings", this.MODE_APPEND);
+//        SharedPreferences.Editor editor = prefs.edit();
+        String topanSavedNames = prefs.getString("topanNames", "");
+
+
+        Random rand = new Random();
+        int num = rand.nextInt(topaneseNames.length);
+
+        Button rndName = (Button) findViewById(R.id.rndNameTmp);
+        rndName.setText(topaneseNames[num]);
+    }
+    public void saveTopanNames(View view){
+////        String[] topaneseNames = getString(R.string.surnames).split(" ");
+//        SharedPreferences prefs = this.getSharedPreferences("settings", this.MODE_APPEND);
+//        SharedPreferences.Editor editor = prefs.edit();
+//        String topanSavedNames = prefs.getString("topanNames", "");
+//
+//        Button rndName = (Button) findViewById(R.id.rndNameTmp);
+//
+//        topanSavedNames = topanSavedNames + " " + rndName.getText().toString();
+//
+//        editor.putString("topanNames",topanSavedNames);
+//        editor.commit();
+//
+//
+//        TextView tempText = (TextView) findViewById(R.id.tempText);
+//        tempText.setText(topanSavedNames);
+//        ClipboardManager clipboard = (ClipboardManager) getSystemService(CLIPBOARD_SERVICE);
+//        clipboard.setText(topanSavedNames);
+
+
+//        SharedPreferences prefs = this.getSharedPreferences("settings", this.MODE_APPEND);
+//        SharedPreferences.Editor editor = prefs.edit();
+//        String teams = prefs.getString("teams", "");
+//        teams = teams.replace("Xav Atlantic?Atlantica?1910?70?Toby Garriz?Navy Yellow?4-2-3-1",
+//                "Xav Atlantic?Atlantica?1910?70?Toby Garriz?Navy Yellow?4-2-1-3");
+
+//        editor.putString("teams",dbTeams);
+//        editor.commit();
+
+
+
+        Button rndName = (Button) findViewById(R.id.saveNameTmp);
+        Intent intent = new Intent(this, FormationActivity.class);
+        intent.putExtra("num", rndName.getText().toString());
+        rndName.setText(Integer.toString(Integer.valueOf(rndName.getText().toString())+1));
+        this.startActivity(intent);
+    }
 
 
 }
