@@ -110,13 +110,11 @@ public class MatchClass {
             String a9 = playersAttack[9];
             String a10 = playersAttack[10];
 
-            String shooterName = playersAttack[shooter].split("\\?")[3];
-            String shooterPos = playersAttack[shooter].split("\\?")[3];
-//            String nimma = playersAttack[shooter].split("\\?")[0];
-//            if(shooterName.equals("GK")){
-//                String x = "";
-//            }
 //            String shooterName = playersAttack[shooter].split("\\?")[0];
+            String shooterPos = playersAttack[shooter].split("\\?")[3];
+            String shooterName = playersAttack[shooter].split("\\?")[0] + " " + shooterPos;
+
+
             int shooterRating = Integer.valueOf(playersAttack[shooter].split("\\?")[4]);
             int keeperRating = Integer.valueOf(playersDefense[0].split("\\?")[4]);
             int rndShoot = rand.nextInt(shooterRating);
@@ -129,7 +127,8 @@ public class MatchClass {
                 }
             }
             if(rndShoot>rndKeeper+10){
-                goalScorers=goalScorers+"*"+shooterName;
+//                goalScorers=goalScorers+"*"+shooterName;
+                goalScorers=goalScorers+shooterName+"\n";
                 return 1;
             } else {
                 return 0;

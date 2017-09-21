@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/textViewPosition"
+        android:layout_gravity="center"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.27"
+        android:textSize="@dimen/text"
+        android:layout_marginBottom="@dimen/bottom"
+        android:layout_marginTop="@dimen/bottom"
+        android:textStyle="bold"
+        android:text="1" />
+
+    <TextView
+        android:id="@+id/textViewTeamName"
+        android:layout_gravity="center"
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:layout_weight="0.16"
+        android:textSize="@dimen/text"
+        android:layout_marginBottom="@dimen/bottom"
+        android:layout_marginTop="@dimen/bottom"
+        android:text="Team" />
+
+    <TextView
+        android:id="@+id/textViewPlayed"
+        android:layout_gravity="center"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.26"
+        android:textSize="@dimen/text"
+        android:layout_marginBottom="@dimen/bottom"
+        android:layout_marginTop="@dimen/bottom"
+        android:text="PM" />
+
+    <TextView
+        android:id="@+id/textViewGFGA"
+        android:layout_gravity="center"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.24"
+        android:textSize="@dimen/text"
+        android:layout_marginBottom="@dimen/bottom"
+        android:layout_marginTop="@dimen/bottom"
+        android:text="GF:GA" />
+
+    <TextView
+        android:id="@+id/textViewGD"
+        android:layout_gravity="center"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.26"
+        android:textSize="@dimen/text"
+        android:layout_marginBottom="@dimen/bottom"
+        android:layout_marginTop="@dimen/bottom"
+        android:text="-GD" />
+
+
+    <TextView
+        android:id="@+id/textViewPoints"
+        android:layout_gravity="center"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.26"
+        android:textSize="@dimen/text"
+        android:layout_marginBottom="@dimen/bottom"
+        android:layout_marginTop="@dimen/bottom"
+        android:textStyle="bold"
+        android:text="P" />
+
+</LinearLayout>

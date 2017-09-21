@@ -23,7 +23,8 @@
         <activity android:name=".FilterPlayerActivity" />
         <activity android:name=".ListActivity" />
         <activity android:name=".CompetitionActivity" />
-        <activity android:name=".FormationActivity"></activity>
+        <activity android:name=".FormationActivity" />
+        <activity android:name=".TableActivity"></activity>
     </application>
 
 </manifest>

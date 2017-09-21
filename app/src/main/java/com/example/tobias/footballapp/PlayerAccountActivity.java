@@ -59,6 +59,8 @@ public class PlayerAccountActivity extends AppCompatActivity {
 
         for(int i=0;i<savedplayers.length;i++){
             if(savedplayers[i].contains(playername)) {
+                String q = savedplayers[i];
+                Toast.makeText(this, q, Toast.LENGTH_SHORT).show();
                 String[] savedPlayerStatus = savedplayers[i].split("\\?");
                 fillAccount(savedPlayerStatus);
             }

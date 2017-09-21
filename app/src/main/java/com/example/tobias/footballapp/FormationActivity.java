@@ -183,7 +183,15 @@ public class FormationActivity extends AppCompatActivity {
 
         teamFormation = new FormationClass(currentTeam.split("\\?")[6], teamPlayers);//formations[4]);
 
+//        if(currentTeam.split("\\?")[6].split("-").length==3){
+//            formMid2=formAtk;
+//        }
+
         setTeamFormation(currentTeam.split("\\?")[6]);
+
+//        if(currentTeam.split("\\?")[6].split("-").length==3){
+//            formMid2=formAtk;
+//        }
 
         setRightShirt();
     }
@@ -196,6 +204,19 @@ public class FormationActivity extends AppCompatActivity {
         formAtk = teamFormation.getAtk();
 
         textGk1.setText(formGK.get(0).split("\\?")[1]);
+
+
+//        String[] posNum = formation.split("-");
+//        visibleDef(Integer.valueOf(posNum[0]));
+//        visibleMid1(Integer.valueOf(posNum[1]));
+//        if(posNum.length>3) {
+//            visibleAtk(Integer.valueOf(posNum[3]));
+//        } else {
+////            formMid2=formAtk;
+//            visibleAtk(Integer.valueOf(0));
+////            visibleAtk(Integer.valueOf(posNum[2]));
+//        }
+//        visibleMid2(Integer.valueOf(posNum[2]));
 
         String[] posNum = formation.split("-");
         visibleDef(Integer.valueOf(posNum[0]));
@@ -780,6 +801,7 @@ public class FormationActivity extends AppCompatActivity {
                 textMid221.setVisibility(View.INVISIBLE);
                 textMid222.setVisibility(View.INVISIBLE);
 
+                String[] swek = formMid2.get(0).split("\\?");
                 textMid233.setText(formMid2.get(0).split("\\?")[1]);
                 textMid232.setText(formMid2.get(1).split("\\?")[1]);
                 textMid231.setText(formMid2.get(2).split("\\?")[1]);
@@ -814,6 +836,8 @@ public class FormationActivity extends AppCompatActivity {
                 textMid221.setVisibility(View.VISIBLE);
                 textMid222.setVisibility(View.VISIBLE);
 
+
+                String[] swek2 = formMid2.get(0).split("\\?");
                 textMid222.setText(formMid2.get(0).split("\\?")[1]);
                 textMid221.setText(formMid2.get(1).split("\\?")[1]);
                 break;
@@ -927,6 +951,7 @@ public class FormationActivity extends AppCompatActivity {
                 textAtk44.setVisibility(View.INVISIBLE);
 
 
+                String[] swek = formAtk.get(0).split("\\?");
                 textAtk22.setText(formAtk.get(0).split("\\?")[1]);
                 textAtk21.setText(formAtk.get(1).split("\\?")[1]);
                 break;
@@ -1030,6 +1055,9 @@ public class FormationActivity extends AppCompatActivity {
                 break;
             case "Xav Atlantic":
                 shirtID = R.drawable.xav_atlantic;
+                break;
+            case "Roseville":
+                shirtID = R.drawable.roseville;
                 break;
             default:
                 shirtID = R.drawable.achilles_away;

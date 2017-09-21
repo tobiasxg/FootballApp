@@ -1,6 +1,7 @@
 package com.example.tobias.footballapp;
 
 import android.content.ClipboardManager;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.annotation.IntegerRes;
@@ -53,8 +54,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void addTeam(View view){
-        Intent intent = new Intent(this, CreateTeamActivity.class);
-        this.startActivity(intent);
+        createTable();
+
+//        HandyTools.createTable(this);
+//        Intent intent = new Intent(this, CreateTeamActivity.class);
+//        this.startActivity(intent);
     }
 
     public void clearPrefs(View view){
@@ -85,7 +89,8 @@ public class MainActivity extends AppCompatActivity {
         String ratingTeams = "";
         String neededPos = "";
 //        rnd=1;
-        for(int n=0;n<18;n++) {
+//        for(int n=0;n<18;n++) {
+        for(int n=0;n<allTeamsArray.length;n++) {
             avgRating = getAvgRating(allTeamsArray, allPlayersArray, n);
 //        but.setText(compensateRating());
 //        String newDB = compensateRating();
@@ -230,9 +235,25 @@ public class MainActivity extends AppCompatActivity {
         String[] allTeamsArray = allTeams.split("\\*");
         for(int i=0;i<allTeamsArray.length;i++) {
             String[] posArray = getRemainingPositions(i);
-            for(int j=0;j<posArray.length;j++) {
-                randomPlayer(i,posArray[j]);
+//            String swek360noscope = "";
+//            boolean z = false;
+//            if(i==19){
+//                String x = "";
+//                String y ="";
+//                z = true;
+//            }
+//            boolean emptyBool = !posArray[0].equals("");
+            if(!posArray[0].equals("")) {
+                for (int j = 0; j < posArray.length; j++) {
+                    randomPlayer(i, posArray[j]);
+//                    if(z){
+//                        z = false;
+//                        z = true;
+//                    }
+//                    swek360noscope = swek360noscope + " " + posArray[j];
+                }
             }
+//            Toast.makeText(this, swek360noscope, Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -618,37 +639,37 @@ public class MainActivity extends AppCompatActivity {
     public void setDatabaseAfterClear(View view){
         SharedPreferences prefs = this.getSharedPreferences("settings", this.MODE_APPEND);
         SharedPreferences.Editor editor = prefs.edit();
-        String dbPlayers =
-                "Toviyah Garou?186?29-09-1996?RM?90?Topan?Xav Atlantic*" +
-                        "Jay Papi Gaio?173?18-04-1990?LW?87?Topan?FC Havtar*" +
-                        "Quava Quna?205?12-11-1987?CDM?90?Dragonia?Drakar North?*" +
-                        "Xander Puam?172?19-04-1994?ST?87?Topan?FC Wulfbosch*" +
-                        "Cruz Cocotúa?172?21-07-2000?LW?77?Topan?Xav Atlantic*" +
-                        "Naña Lifyli?180?30-03-1987?RM?88?Topan?Achilles*" +
-                        "Seto Sanchez?183?29-04-1992?LB?85?Topan?Achilles*" +
-                        "Léon K'ara?172?11-11-1986?CM?85?Topan?FC Wulfbosch*" +
-                        "Joël Bjärsmyr?190?03-06-1997?ST?83?Sweden?Rivergod*" +
-                        "Victor Gielen?186?16-07-1999?GK?82?België?Achilles*" +
-                        "Kovu Kristaldo?178?26-11-1993?CAM?85?Dragonia?Drakar North*" +
-                        "Téodor Rosèle?186?21-01-1995?LB?83?Topan?Xav Atlantic*" +
-                        "Yago Arnaíz?172?16-08-1999?LB?81?Venezuela?Drakar North?*" +
-                        "Cristóbal Castle?190?22-11-1995?CM?84?Maxico?Xav Atlantic*"+
-                        "Nicola Ricci?192?03-11-1998?LB?82?Italian?FC Havtar*" +
-                        "Bruno Bello?199?11-09-1997?CB?82?Italian?Xav Atlantic?*" +
-                        "Lorenzo Visser?190?23-12-1999?RM?80?Netherlands?FC Havtar*"+
-                        "Nicolás Contín?177?13-02-2000?RW?77?Argentina?Xav Atlantic*"+
-                        "Benito Jurado?172?15-07-1999?LM?77?Venezuela?Achilles*";
-        editor.putString("players",dbPlayers);
-        editor.putString("playersVIP",dbPlayers);
+//        String dbPlayers =
+//                "Toviyah Garou?186?29-09-1996?RM?90?Topan?Xav Atlantic*" +
+//                        "Jay Papi Gaio?173?18-04-1990?LW?87?Topan?FC Havtar*" +
+//                        "Quava Quna?205?12-11-1987?CDM?90?Dragonia?Drakar North?*" +
+//                        "Xander Puam?172?19-04-1994?ST?87?Topan?FC Wulfbosch*" +
+//                        "Cruz Cocotúa?172?21-07-2000?LW?77?Topan?Xav Atlantic*" +
+//                        "Naña Lifyli?180?30-03-1987?RM?88?Topan?Achilles*" +
+//                        "Seto Sanchez?183?29-04-1992?LB?85?Topan?Achilles*" +
+//                        "Léon K'ara?172?11-11-1986?CM?85?Topan?FC Wulfbosch*" +
+//                        "Joël Bjärsmyr?190?03-06-1997?ST?83?Sweden?Rivergod*" +
+//                        "Victor Gielen?186?16-07-1999?GK?82?België?Achilles*" +
+//                        "Kovu Kristaldo?178?26-11-1993?CAM?85?Dragonia?Drakar North*" +
+//                        "Téodor Rosèle?186?21-01-1995?LB?83?Topan?Xav Atlantic*" +
+//                        "Yago Arnaíz?172?16-08-1999?LB?81?Venezuela?Drakar North?*" +
+//                        "Cristóbal Castle?190?22-11-1995?CM?84?Maxico?Xav Atlantic*"+
+//                        "Nicola Ricci?192?03-11-1998?LB?82?Italian?FC Havtar*" +
+//                        "Bruno Bello?199?11-09-1997?CB?82?Italian?Xav Atlantic?*" +
+//                        "Lorenzo Visser?190?23-12-1999?RM?80?Netherlands?FC Havtar*"+
+//                        "Nicolás Contín?177?13-02-2000?RW?77?Argentina?Xav Atlantic*"+
+//                        "Benito Jurado?172?15-07-1999?LM?77?Venezuela?Achilles*";
+//        editor.putString("players",dbPlayers);
+//        editor.putString("playersVIP",dbPlayers);
 
         String dbTeams =
-                "Xav Atlantic?Atlantica?1910?70?Toby Garriz?Navy Red?4-2-1-3?84*" +
+                "Xav Atlantic?Atlantica?1910?70?Toby Garriz?Navy Yellow?4-2-3-1?84*" +
                         "FC Havtar?Havtar?1910?90?Peter van der Haven?Blue Navy?4-1-4-1?85*" +
                         "FC Wulfbosch?Wulfbosch?1910?80?Nik Howls?Green?4-2-3-1?85*" +
                         "Achilles?Topato?1910?80?Giorgi Hile?White Black?4-3-3?83*" +
                         "Drakar North?Drakar?1910?80?Eluf Issakson?Black Red?4-2-3-1?84*" +
                         "Rivergod?Riveria?1910?60?Geoffry Maren?Navy Blue?4-1-2-3?83*" +
-                        "Elefune?Topato?1910?70?Olaf Släger?Yellow White?5-4-1?80*" +
+                        "Elefune?Topato?1910?70?Olaf Släger?Yellow White?4-4-1-1?80*" +
                         "FC Araia?Araia?1910?60?Kevin De Röver?Green Yellow?4-1-3-2?79*" +
                         "Phoenix Football?Araia?1910?50?Felix Fuegon?Black Red?4-4-2?79*"+
                         "Xaris Plaza?Xaris?1910?40?Olivier Lemaster?Navy Red?4-1-4-1?80*" +
@@ -658,7 +679,8 @@ public class MainActivity extends AppCompatActivity {
                         "Fourmation?Cater?1910?25?Ricardo Mireles?Green Blue?4-4-2?76*"+
                         "FC Hague?Hague?1910?60?Daniel D'Orange?Red White?4-4-2?77*" +
                         "Lions Club?Lionarden?1910?20?Leo Raor?Orange Black?4-3-3?77*" +
-                        "Club Lux?Lux?1910?25?Philippe Edison?Yellow Lightblue?5-3-2?76*" +
+                        "Club Lux?Lux?1910?25?Philippe Edison?Yellow Lightblue?5-2-1-2?76*" +
+                        "Roseville?Roseville?1910?60?Calvin Rosario?Red Green?4-3-1-2?80*" +
                         "Mota Noa FC?Mota Noa?1910?25?Noah Bionica?Yellow Black?4-1-4-1?76*";
         editor.putString("teams",dbTeams);
         editor.commit();
@@ -757,7 +779,13 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void goToCompetition(View view){
+        SharedPreferences prefs = this.getSharedPreferences("settings", this.MODE_APPEND);
+        String table = prefs.getString("table","");
+        String weekNum = Integer.toString(Integer.valueOf(table.split("\\?")[5].split("--")[0])+1);
+        String weekToLoad = "Week " + weekNum;
         Intent intent = new Intent(this, CompetitionActivity.class);
+        intent.putExtra("loadWeek",weekToLoad);
+//        intent.putExtra("loadWeek","Week 1");
         this.startActivity(intent);
     }
 
@@ -779,19 +807,22 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void filterTopanNames(View view){
-        String[] topaneseNames = getString(R.string.surnames).split(" ");
-        SharedPreferences prefs = this.getSharedPreferences("settings", this.MODE_APPEND);
-//        SharedPreferences.Editor editor = prefs.edit();
-        String topanSavedNames = prefs.getString("topanNames", "");
-
-
-        Random rand = new Random();
-        int num = rand.nextInt(topaneseNames.length);
-
-        Button rndName = (Button) findViewById(R.id.rndNameTmp);
-        rndName.setText(topaneseNames[num]);
+//        String[] topaneseNames = getString(R.string.surnames).split(" ");
+//        SharedPreferences prefs = this.getSharedPreferences("settings", this.MODE_APPEND);
+////        SharedPreferences.Editor editor = prefs.edit();
+//        String topanSavedNames = prefs.getString("topanNames", "");
+//
+//
+//        Random rand = new Random();
+//        int num = rand.nextInt(topaneseNames.length);
+//
+//        Button rndName = (Button) findViewById(R.id.rndNameTmp);
+//        rndName.setText(topaneseNames[num]);
+        Intent intent = new Intent(this, TableActivity.class);
+        this.startActivity(intent);
     }
     public void saveTopanNames(View view){
+//        setDatabaseAfterClear(view);
 ////        String[] topaneseNames = getString(R.string.surnames).split(" ");
 //        SharedPreferences prefs = this.getSharedPreferences("settings", this.MODE_APPEND);
 //        SharedPreferences.Editor editor = prefs.edit();
@@ -814,19 +845,41 @@ public class MainActivity extends AppCompatActivity {
 //        SharedPreferences prefs = this.getSharedPreferences("settings", this.MODE_APPEND);
 //        SharedPreferences.Editor editor = prefs.edit();
 //        String teams = prefs.getString("teams", "");
-//        teams = teams.replace("Xav Atlantic?Atlantica?1910?70?Toby Garriz?Navy Yellow?4-2-3-1",
-//                "Xav Atlantic?Atlantica?1910?70?Toby Garriz?Navy Yellow?4-2-1-3");
-
-//        editor.putString("teams",dbTeams);
+//        teams = teams.replace("Xav Atlantic?Atlantica?1910?70?Toby Garriz?Navy Red?4-2-1-3",
+//                "Xav Atlantic?Atlantica?1910?70?Toby Garriz?Navy Yellow?4-2-3-1");
+//        teams = teams.replace("Elefune?Topato?1910?70?Olaf Släger?Yellow White?5-4-1",
+//                "Elefune?Topato?1910?70?Olaf Släger?Yellow White?4-4-1-1");
+//
+//        editor.putString("teams",teams);
 //        editor.commit();
-
-
-
+//
+//        Toast.makeText(this, teams.split("\\*")[0], Toast.LENGTH_SHORT).show();
+//
         Button rndName = (Button) findViewById(R.id.saveNameTmp);
         Intent intent = new Intent(this, FormationActivity.class);
         intent.putExtra("num", rndName.getText().toString());
         rndName.setText(Integer.toString(Integer.valueOf(rndName.getText().toString())+1));
         this.startActivity(intent);
+    }
+
+    public void createTable(){
+        SharedPreferences prefs = getSharedPreferences("settings", this.MODE_APPEND);
+        SharedPreferences.Editor editor = prefs.edit();
+        String teams = prefs.getString("teams", "");
+        String[] allTeams = teams.split("\\*");
+        String table = "";
+        for(int i = 0; i<allTeams.length;i++){
+//            Points    ?   NAME  ?   Played Matches  ?   Win ?   Draw    ?   Lose    ?   Scored Goals    ?   Conceded Goals
+//            table = table + "0-Points?"+allTeams[i].split("\\?")[0]+"?0-Played?0-Won?0-Draw?0-Lost?0-GF?0-GA*";
+
+//            Points    ?   Goal Difference ?   Scored Goals    ?   Conceded Goals  ?   NAME  ?   Played Matches  ?   Win ?   Draw    ?   Lose
+            table = table + "0--Points?"+"0--GD?0--GF?0--GA?"+allTeams[i].split("\\?")[0]+"?0--Played?0--Won?0--Draw?0--Lost*";
+        }
+        editor.putString("table",table);
+        editor.commit();
+
+
+//        Toast.makeText(this, table, Toast.LENGTH_SHORT).show();
     }
 
 

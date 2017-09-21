@@ -56,9 +56,38 @@ public class ListActivity extends AppCompatActivity {
         enabledPos = extras.getString("enabledPos");
 
 
+
         SharedPreferences prefs = this.getSharedPreferences("settings",this.MODE_PRIVATE);
         String savedPlayer = prefs.getString(listName, "");
         String[] savedPlayers = savedPlayer.split("\\*");
+
+
+        try {
+            String searchString = extras.getString("searchString");
+            String filteredString = "";
+            for(int i = 0; i<savedPlayers.length;i++){
+                if(savedPlayers[i].split("\\?")[0].toLowerCase().contains(searchString.toLowerCase())){
+                    filteredString = filteredString+savedPlayers[i]+"*";
+                }
+            }
+            savedPlayers = filteredString.split("\\*");
+        } catch (Exception e){
+
+        }
+
+//        try {
+//            String FIFA = extras.getString("FIFA");
+//            String filteredString = "";
+//            for(int i = 0; i<savedPlayers.length;i++){
+//                if(savedPlayers[i].contains("FIFA") && FIFA.equals("yes")){
+//                    filteredString = filteredString+savedPlayers[i]+"*";
+//                }
+//            }
+//            savedPlayers = filteredString.split("\\*");
+//        } catch (Exception e){
+//
+//        }
+
 
 
         String teamString = prefs.getString("teams", "");
@@ -187,6 +216,9 @@ public class ListActivity extends AppCompatActivity {
                 break;
             case "Xav Atlantic":
                 shirtID = R.drawable.xav_atlantic;
+                break;
+            case "Roseville":
+                shirtID = R.drawable.roseville;
                 break;
             default:
                 shirtID = R.drawable.achilles_away;

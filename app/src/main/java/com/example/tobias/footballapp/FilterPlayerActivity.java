@@ -160,13 +160,13 @@ public class FilterPlayerActivity extends AppCompatActivity {
 
 //        SharedPreferences prefs = this.getSharedPreferences("settings", this.MODE_APPEND);
 //        SharedPreferences.Editor editor = prefs.edit();
-        String dbTeams ="Xav Atlantic?"+    "Atlantica?"+   "1910?70?Toby Garriz?Navy Red?4-2-1-3?82*" +
+        String dbTeams ="Xav Atlantic?"+    "Atlantica?"+   "1910?70?Toby Garriz?Navy Yellow?4-2-3-1?82*" +
                         "FC Havtar?"+       "Havtar?"+      "1910?90?Peter van der Haven?Blue Navy?4-1-4-1?83*" +
                         "FC Wulfbosch?"+    "Wulfbosch?"+   "1910?80?Nik Howls?Green?4-2-3-1?83*" +
                         "Achilles?"+        "Topato?"+      "1910?80?Giorgi Hile?White Black?4-3-3?81*" +
                         "Drakar North?"+    "Drakar?"+      "1910?80?Eluf Issakson?Black Red?4-2-3-1?82*" +
                         "Rivergod?"+        "Riveria?"+     "1910?60?Geoffry Maren?Navy Blue?4-1-2-3?81*" +
-                        "Elefune?"+         "Topato?"+      "1910?70?Olaf Släger?Yellow White?5-4-1?78*" +
+                        "Elefune?"+         "Topato?"+      "1910?70?Olaf Släger?Yellow White?4-4-1-1?78*" +
                         "FC Araia?"+        "Araia?"+       "1910?60?Kevin De Röver?Green Yellow?4-1-3-2?77*" +
                         "Phoenix Football?"+"Araia?"+       "1910?50?Felix Fuegon?Black Red?4-4-2?77*"+
                         "Xaris Plaza?"+     "Xaris?"+       "1910?40?Olivier Lemaster?Navy Red?4-1-4-1?78*" +
@@ -177,8 +177,38 @@ public class FilterPlayerActivity extends AppCompatActivity {
                         "FC Hague?"+        "Hague?"+       "1910?60?Daniel D'Orange?Red White?4-4-2?75*" +
                         "Lions Club?"+      "Lionarden?"+   "1910?20?Leo Raor?Orange Black?4-3-3?75*" +
                         "Club Lux?"+        "Lux?"+         "1910?25?Philippe Edison?Yellow Black?5-3-2?74*" +
+                        "Roseville?"+        "Roseville?"+  "1910?60?Calvin Rosario?Red Green?4-3-1-2?80*" +
                         "Mota Noa FC?"+     "Mota Noa?"+    "1910?25?Noah Bionica?Yellow Black?4-1-4-1?74*";
         editor.putString("teams",dbTeams);
         editor.commit();
+    }
+
+    public void searchOnString(View view){
+        EditText searchableStringEdit = (EditText) findViewById(R.id.searchString);
+        String searchString = searchableStringEdit.getText().toString();
+
+        String enabledPos = getAllChecks();
+//        String club = clubSpinner.getSelectedItem().toString();
+//        String country = countrySpinner.getSelectedItem().toString();
+        Intent intent = new Intent(this, ListActivity.class);
+        intent.putExtra("listName", "players");
+        intent.putExtra("currentTeam", "-NONE-");
+        intent.putExtra("filter", "overall");
+        intent.putExtra("countryFilter", "-NONE-");
+        intent.putExtra("enabledPos", "?");
+        intent.putExtra("searchString", searchString);
+        this.startActivity(intent);
+    }
+
+    public void findFifaPlayers(View view){
+        Intent intent = new Intent(this, ListActivity.class);
+        intent.putExtra("listName", "players");
+        intent.putExtra("currentTeam", "-NONE-");
+        intent.putExtra("filter", "overall");
+        intent.putExtra("countryFilter", "-NONE-");
+        intent.putExtra("enabledPos", "?");
+        intent.putExtra("FIFA", "yes");
+        this.startActivity(intent);
+
     }
 }

@@ -1,5 +1,7 @@
 package com.example.tobias.footballapp;
 
+import android.content.SharedPreferences;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -33,14 +35,13 @@ public class MakeCompetition {
 
         public String[] setCompetition(String vsDays){
             this.vsDays = vsDays;
-
-//            vsDays.replace("vs","");
-//            String q = "vsDays";
-
             vsDays = vsDays.replace("vs"," vs ");
-//            matchesList.size();
+            matchesList.size();
             String vsDaysReversed = reverseDays();
             vsDays=vsDays+vsDaysReversed;
+            vsDays = vsDays.replace("**","*");
+//            String[] f = vsDays.split(" vs ");
+//            int ff = f.length;
             for(int k = 18;k>0;k--){
                 String kString = Integer.toString(k);
                 String kStringRev = new StringBuilder(Integer.toString(k)).reverse().toString();

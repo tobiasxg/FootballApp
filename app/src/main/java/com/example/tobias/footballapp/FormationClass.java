@@ -24,18 +24,23 @@ public class FormationClass {
     int mid2Num;
     int atkNum;
 
+    boolean longFormation = false;
+
     List<String> players = new ArrayList<>();
 
     public FormationClass(String formation, String[] players) {
         String[] posNums = formation.split("-");
         defNum = Integer.valueOf(posNums[0]);
         mid1Num = Integer.valueOf(posNums[1]);
-        mid2Num = Integer.valueOf(posNums[2]);
         if(posNums.length>3) {
+            mid2Num = Integer.valueOf(posNums[2]);
             atkNum = Integer.valueOf(posNums[3]);
         } else {
-            atkNum = 0;
+            longFormation = true;
+            mid2Num = 0;
+            atkNum = Integer.valueOf(posNums[2]);
         }
+
         gk.add("GK");
         def(defNum);
         mid1(mid1Num);
@@ -51,7 +56,8 @@ public class FormationClass {
         this.players = Arrays.asList(players);
         Arrays.sort(players);
 
-        fillPlayersPos();
+//        fillPlayersPos();
+        fillPlayersPosTemp();
     }
 
     public List<String> getGK(){
@@ -67,11 +73,19 @@ public class FormationClass {
     }
 
     public List<String> getMid2() {
-        return mid2;
+        if(longFormation){
+            return atk;
+        } else {
+            return mid2;
+        }
     }
 
     public List<String> getAtk(){
-        return atk;
+        if(longFormation){
+            return mid2;
+        } else {
+            return atk;
+        }
     }
 
 
@@ -143,6 +157,112 @@ public class FormationClass {
 
     }
 
+
+    public void fillPlayersPosTemp(){
+        for(int i = players.size()-1;i>=0;i--){
+            String[] player = players.get(i).split("\\?");
+            String pos = player[2];
+            boolean ongoing = true;
+
+            for(int num = 0;num<4; num++){
+                String nummedPos;
+                String xx = player[1];
+                boolean swek = false;
+                boolean xtemp = xx.equals("Toviyah Garou");
+                if(xtemp&&num==1){
+                    String temp="";
+                    swek = true;
+                }
+                if(ongoing) {
+                    for (int a = 0; a < atk.size(); a++) {
+
+//                        if(swek &&a==1){
+//                            swek = true;
+//                            swek = true;
+//                        }
+                        try{
+                            nummedPos = atk.get(a).split("-")[num];
+                        } catch (Exception e){
+                            nummedPos = "FALSE";
+//                            break;
+                        }
+//                        if(swek &&a==1){
+//                            swek = true;
+//                            swek = true;
+//                        }
+                        if (nummedPos.contains(pos) &&
+                                atk.get(a).contains(pos) &&
+                                !atk.get(a).contains("?CHECK?")) {
+                            atk.set(a, atk.get(a) + "?" + player[1] + "?" + player[0] + "?CHECK?");
+                            ongoing = false;
+                            break;
+                        }
+                    }
+                }
+
+                if(ongoing){
+                    for (int m2 = 0;m2<mid2.size();m2++){
+                        try{
+                            nummedPos = mid2.get(m2).split("-")[num];
+                        } catch (Exception e){
+                            nummedPos = "FALSE";
+//                            break;
+                        }
+                        if (nummedPos.contains(pos) &&
+                                mid2.get(m2).contains(pos) &&
+                                !mid2.get(m2).contains("?CHECK?")){
+                            mid2.set(m2,mid2.get(m2)+"?"+player[1]+"?"+player[0]+"?CHECK?");
+                            ongoing = false;
+                            break;
+                        }
+                    }
+                }
+
+                if(ongoing) {
+                    for (int m1 = 0; m1 < mid1.size(); m1++) {
+                        try{
+                            nummedPos = mid1.get(m1).split("-")[num];
+                        } catch (Exception e){
+                            nummedPos = "FALSE";
+                            break;
+                        }
+                        if (nummedPos.contains(pos) &&
+                                mid1.get(m1).contains(pos) &&
+                                !mid1.get(m1).contains("?CHECK?")) {
+                            mid1.set(m1, mid1.get(m1) + "?" + player[1] + "?" + player[0] + "?CHECK?");
+                            ongoing = false;
+                            break;
+                        }
+                    }
+                }
+
+                if(ongoing) {
+                    for (int d = 0; d < def.size(); d++) {
+                        try{
+                            nummedPos = def.get(d).split("-")[num];
+                        } catch (Exception e){
+                            nummedPos = "FALSE";
+//                            break;
+                        }
+                        if (nummedPos.contains(pos) &&
+                                def.get(d).contains(pos) &&
+                                !def.get(d).contains("?CHECK?")) {
+                            def.set(d, def.get(d) + "?" + player[1] + "?" + player[0] + "?CHECK?");
+                            break;
+                        }
+                    }
+                }
+
+                if(ongoing) {
+                    if (gk.get(0).contains(pos) &&
+                            !gk.get(0).contains("?CHECK?")) {
+                        gk.set(0,"GK" + "?" + player[1] + "?" + player[0] + "?CHECK?");
+                    }
+                }
+            }
+        }
+    }
+
     public void def(int num){
         switch(num){
             case 5:
@@ -187,11 +307,11 @@ public class FormationClass {
                 mid1.add("CM-CDM-CAM-RM");
                 break;
             case 2:
-                mid1.add("CM-CDM-CAM-LM");
-                mid1.add("CM-CDM-CAM-RM");
+                mid1.add("CM-CDM");
+                mid1.add("CM-CDM");
                 break;
             case 1:
-                mid1.add("CM-CDM");
+                mid1.add("CDM-CM");
                 break;
         }
     }
@@ -200,9 +320,9 @@ public class FormationClass {
         switch(num){
             case 5:
                 mid2.add("CM-LM-CAM");
-                mid2.add("CM-CDM-CAM");
-                mid2.add("CM-CDM-CAM");
-                mid2.add("CM-CDM-CAM");
+                mid2.add("CM-CAM");
+                mid2.add("CM-CAM");
+                mid2.add("CM-CAM");
                 mid2.add("CM-RM-CAM");
                 break;
             case 4:
@@ -212,9 +332,9 @@ public class FormationClass {
                 mid2.add("CM-RM-CAM");
                 break;
             case 3:
-                mid2.add("CM-CAM-LM");
-                mid2.add("CM-CAM");
-                mid2.add("CM-CAM-RM");
+                mid2.add("LM-CAM");
+                mid2.add("CAM-CM");
+                mid2.add("RM-CAM");
                 break;
             case 2:
                 mid2.add("CM-CAM-LM");
